@@ -1,0 +1,45 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Seka Herve
+ * Date: 01/05/2018
+ * Time: 19:42
+ */
+
+namespace TechCorp\FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Class Client
+ * @package TechCorp\FrontBundle\Entity
+ * @ORM\Table(name="client")
+ * @ORM\Entity
+ */
+class Client
+{
+    /**
+     * @ORM\Column(name="idClient", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * @var ArrayCollection Produit $produits
+     * Owning Side
+     *
+     * @ORM\ManyToMany(targetEntity="ReductionCode", inversedBy="clients", cascade={"persist", "merge"})
+     * @ORM\JoinTable(name="Acheter",
+     *     joinColumns={@ORM\JoinColumn(name="client_id", referencedColumnName="id_client")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="reduction_id", referencedColumnName="id_reduction_code")}
+     *     )
+     */
+    protected $reductionCodes;
+
+    public function __construct()
+    {
+        $this->reductionCodes = new ArrayCollection();
+    }
+}
