@@ -3,6 +3,7 @@
 namespace TechCorp\FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use TechCorp\FrontBundle\Entity\User;
 
 /**
  * Status
@@ -50,7 +51,11 @@ class Status
      */
     private $updatedAt;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="statuses")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * Get id
@@ -169,5 +174,28 @@ class Status
     public function preUpdateEvent()
     {
         $this->updateAt = new \DateTime();
+    }
+
+    /**
+     * Set user
+     *
+     * @param \TechCorp\FrontBundle\Entity\User $user
+     * @return Status
+     */
+    public function setUser(\TechCorp\FrontBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \TechCorp\FrontBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

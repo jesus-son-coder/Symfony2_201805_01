@@ -27,4 +27,13 @@ class StaticController extends Controller
         return $this->render('TechCorpFrontBundle:Static:about.html.twig');
     }
 
+    public function someAction($id)
+    {
+        $company = $this->getDoctrine()->getRepository('AppBundle:Company')->find($id);
+
+        $streetNumber = $company->getAddress()->getStreetNumber();
+    }
+
+
+
 }
