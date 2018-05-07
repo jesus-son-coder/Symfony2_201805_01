@@ -21,10 +21,11 @@ class LoadStatusData extends AbstractFixture implements OrderedFixtureInterface
             $status = new Status();
             $status->setContent($faker->text(250));
             $status->setDeleted($faker->boolean);
-            $user = $this->getReference('user', rand(0,9));
+            $user = $this->getReference('user'. rand(0,9));
             $status->setUser($user);
 
             $manager->persist($status);
+            $this->addReference('status'.$i, $status);
         }
         $manager->flush();
     }

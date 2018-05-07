@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use TechCorp\FrontBundle\Entity\User;
 
 /**
- * Status
+ * class Status
  *
  * @ORM\Table(name="status")
  * @ORM\Entity
@@ -56,6 +56,20 @@ class Status
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="status")
+     */
+    protected $comments;
+
+
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
 
     /**
      * Get id
@@ -197,5 +211,38 @@ class Status
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comments
+     * @return Status
+     */
+    public function addComment(\TechCorp\FrontBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comments
+     */
+    public function removeComment(\TechCorp\FrontBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

@@ -1,18 +1,16 @@
 <?php
-
 namespace TechCorp\FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use TechCorp\FrontBundle\Entity\User;
 
 /**
- * class Status
- *
- * @ORM\Table(name="status")
+ * Class Comment
+ * @package TechCorp\FrontBundle\Entity
+ * @ORM\Table(name="comment")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
  */
-class Status
+class Comment
 {
     /**
      * @var integer
@@ -31,45 +29,25 @@ class Status
     private $content;
 
     /**
-     * @var boolean
-     *
-     * @ORM\Column(name="deleted", type="boolean", options={"default":"0"})
-     */
-    private $deleted;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime")
-     */
-    private $updatedAt;
+
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="statuses")
+     * @ORM\ManyToOne(targetEntity="Status", inversedBy="comments")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     */
+    protected $status;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="status")
-     */
-    protected $comments;
-
-
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
 
     /**
      * Get id
@@ -85,7 +63,7 @@ class Status
      * Set content
      *
      * @param string $content
-     * @return Status
+     * @return Comment
      */
     public function setContent($content)
     {
@@ -105,33 +83,10 @@ class Status
     }
 
     /**
-     * Set deleted
-     *
-     * @param boolean $deleted
-     * @return Status
-     */
-    public function setDeleted($deleted)
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Get deleted
-     *
-     * @return boolean 
-     */
-    public function getDeleted()
-    {
-        return $this->deleted;
-    }
-
-    /**
      * Set createdAt
      *
      * @param \DateTime $createdAt
-     * @return Status
+     * @return Comment
      */
     public function setCreatedAt($createdAt)
     {
@@ -151,50 +106,33 @@ class Status
     }
 
     /**
-     * Set updatedAt
+     * Set status
      *
-     * @param \DateTime $updatedAt
-     * @return Status
+     * @param \TechCorp\FrontBundle\Entity\Status $status
+     * @return Comment
      */
-    public function setUpdatedAt($updatedAt)
+    public function setStatus(\TechCorp\FrontBundle\Entity\Status $status = null)
     {
-        $this->updatedAt = $updatedAt;
+        $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Get updatedAt
+     * Get status
      *
-     * @return \DateTime 
+     * @return \TechCorp\FrontBundle\Entity\Status 
      */
-    public function getUpdatedAt()
+    public function getStatus()
     {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @ORM\PrePersist
-     */
-    public function prePersistEvent()
-    {
-        $this->createdAt = new \DateTime();
-        $this->updatedAt = new \DateTime();
-    }
-
-    /**
-     * @ORM\PreUpdate
-     */
-    public function preUpdateEvent()
-    {
-        $this->updateAt = new \DateTime();
+        return $this->status;
     }
 
     /**
      * Set user
      *
      * @param \TechCorp\FrontBundle\Entity\User $user
-     * @return Status
+     * @return Comment
      */
     public function setUser(\TechCorp\FrontBundle\Entity\User $user = null)
     {
@@ -211,5 +149,13 @@ class Status
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePErsistEvent()
+    {
+        $this->createdAt = new \Datetime();
     }
 }
