@@ -15,7 +15,7 @@
         <tbody>
         {% for status in statuses %}
             <tr>
-                <td><a href="{{ path ('tech_corp_front_user_timeline', { userID : status.user.id }) }}">
+                <td><a href="{{ path ('tech_corp_front_user_timeline', { userId : status.user.id }) }}">
                     {{ status.user.username }}
                     </a>
                 </td>
