@@ -18,8 +18,7 @@ class TimelineController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $repository = $em->getRepository('TechCorpFrontBundle:Status');
-        $statuses = $repository->getStatusesAndUsers();
-        // $statuses = $repository->findAll();
+        $statuses = $repository->getStatusesAndUsers()->getResult();
 
         return $this->render('TechCorpFrontBundle:Timeline:timeline.html.twig', array(
             'statuses' => $statuses,
@@ -33,12 +32,8 @@ class TimelineController extends Controller
         if(!$user) {
             $this->createNotFoundException("L'utilisateur n'a pas été trouvé.");
         }
-        $statuses = $em->getRepository('TechCorpFrontBundle:Status')->findBy(
-            array (
-                'user' => $user,
-                'deleted' => false
-            )
-        );
+        $statuses = $em->getRepository('TechCorpFrontBundle:Status')->getUserTimeline($user)->getResult();
+
         return $this->render('TechCorpFrontBundle:Timeline:user_timeline.html.twig', array(
             'user' => $user,
             'statuses' => $statuses,
