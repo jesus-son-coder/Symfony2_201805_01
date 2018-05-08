@@ -28,7 +28,7 @@ class User
      */
     private $username;
 
-    /**@var ArrayCollection Statut $statuses
+    /**
      * @ORM\OneToMany(targetEntity="Status", mappedBy="user")
      */
     protected $statuses;

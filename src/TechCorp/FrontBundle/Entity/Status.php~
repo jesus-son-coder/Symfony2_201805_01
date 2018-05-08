@@ -9,7 +9,7 @@ use TechCorp\FrontBundle\Entity\User;
  * class Status
  *
  * @ORM\Table(name="status")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="TechCorp\FrontBundle\Repository\StatusRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Status
@@ -211,5 +211,38 @@ class Status
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comments
+     * @return Status
+     */
+    public function addComment(\TechCorp\FrontBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \TechCorp\FrontBundle\Entity\Comment $comments
+     */
+    public function removeComment(\TechCorp\FrontBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
