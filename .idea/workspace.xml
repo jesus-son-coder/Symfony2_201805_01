@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d0e9945-80ce-4ea1-a767-daea99392612" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/timeline.html.twig" afterPath="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/timeline.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig" afterPath="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+              <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -33,18 +32,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="68" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadStatusData.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/DataFixtures/ORM/LoadStatusData.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="79" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="79" />
-              <folding>
-                <element signature="e#57#106#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="timeline.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/timeline.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -71,11 +58,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="user_timeline.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TimelineController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Controller/TimelineController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="29" column="85" lean-forward="true" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+              <caret line="29" column="85" lean-forward="false" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
               <folding>
                 <element signature="e#138#195#0#PHP" expanded="true" />
               </folding>
@@ -121,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/_components/status.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+              <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -171,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/DataFixtures/ORM/LoadUserData.php" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/DataFixtures/ORM/LoadFriendshipData.php" />
-        <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Entity/Status.php" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Entity/Comment.php" />
@@ -180,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/_components/status.html.twig" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Controller/TimelineController.php" />
         <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/timeline.html.twig" />
+        <option value="$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig" />
       </list>
     </option>
   </component>
@@ -445,7 +442,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129416000" />
+    <option name="totallyTimeSpent" value="129823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -721,20 +718,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/DataFixtures/ORM/LoadStatusData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="79" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="79" />
           <folding>
-            <element signature="e#57#106#0#PHP" expanded="true" />
+            <element signature="e#57#106#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,7 +739,7 @@
     <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -796,7 +785,7 @@
     <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/_components/status.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -804,7 +793,7 @@
     <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Controller/TimelineController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="29" column="85" lean-forward="true" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+          <caret line="29" column="85" lean-forward="false" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
           <folding>
             <element signature="e#138#195#0#PHP" expanded="true" />
           </folding>
@@ -815,6 +804,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TechCorp/FrontBundle/Resources/views/Timeline/user_timeline.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding />
         </state>
       </provider>

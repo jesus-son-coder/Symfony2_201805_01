@@ -7,7 +7,7 @@
         {% if statuses != null %}
             <div class="container">
                 {% for status in statuses %}
-                    {% include 'TechCorpFrontBundle:_components:status.html.twig' {'status':status} %}
+                    {% include 'TechCorpFrontBundle:_components:status.html.twig' with {status: status} %}
                 {% endfor %}
             </div>
         {% else %}
