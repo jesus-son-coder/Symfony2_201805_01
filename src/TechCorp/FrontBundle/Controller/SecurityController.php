@@ -1,0 +1,22 @@
+<?php
+namespace TechCorp\FrontBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use TechCorp\FrontBundle\Entity\User;
+
+class SecurityController extends Controller
+{
+    public function loginAction()
+    {
+        return $this->render('TechCorpFrontBundle:Security:login.html.twig');
+    }
+
+    public function securedAction()
+    {
+        $user = new USer();
+        return $this->render('TechCorpFrontBundle:Security:secured.html.twig', array(
+            'user' => $user
+        ));
+    }
+}

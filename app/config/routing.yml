@@ -6,5 +6,7 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-
+tech_corp_front_security:
+    resource: "@TechCorpFrontBundle/Resources/config/security_routes.yml"
+    prefix:  /
 
