@@ -14,7 +14,8 @@ class SecurityController extends Controller
 
     public function securedAction()
     {
-        $user = new USer();
+        $user = $this->getUser();
+
         return $this->render('TechCorpFrontBundle:Security:secured.html.twig', array(
             'user' => $user
         ));

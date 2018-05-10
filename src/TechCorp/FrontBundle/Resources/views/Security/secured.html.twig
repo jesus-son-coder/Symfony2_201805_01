@@ -5,5 +5,4 @@
 {% elseif is_granted ('ROLE_ADMIN') %}
     <p>Vous êtes administrateur.</p>
 {% endif %}
-{# <a href="{{ path('tech_corp_front_security_logout') }}">Deconnexion</a> #}
-<a href="#">Deconnexion</a>
+<a href="{{ path ('tech_corp_front_security_logout') }}">Deconnexion</a>

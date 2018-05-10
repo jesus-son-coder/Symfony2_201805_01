@@ -16,4 +16,12 @@ class DefaultController extends Controller
 
     }
 
+    public function editArticle($articleId)
+    {
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException();
+        }
+        // . . .
+    }
+
 }
