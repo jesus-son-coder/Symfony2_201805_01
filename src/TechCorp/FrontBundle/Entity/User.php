@@ -5,6 +5,7 @@ namespace TechCorp\FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use TechCorp\FrontBundle\Entity\Status;
 use Doctrine\Common\Collections\ArrayCollection;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * class User
@@ -12,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User
+class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -26,7 +27,7 @@ class User
      *
      * @ORM\Column(name="username", type="string", length=255)
      */
-    private $username;
+    protected $username;
 
     /**
      * @ORM\OneToMany(targetEntity="Status", mappedBy="user")
@@ -42,13 +43,13 @@ class User
      *     inverseJoinColumns={@ORM\JoinColumn(name="friend_user_id", referencedColumnName="id")}
      *     )
      */
-    private $friends;
+    protected $friends;
 
 
     /**
      * @ORM\ManyToMany(targetEntity="User", mappedBy="friends")
      */
-    private $friendsWithMe;
+    protected $friendsWithMe;
 
 
     /**
@@ -61,7 +62,7 @@ class User
      */
     public function __construct()
     {
-        // parent::__construct();
+        parent::__construct();
         $this->statuses = new ArrayCollection();
         $this->friends = new ArrayCollection();
         $this->friendsWithMe = new ArrayCollection();
