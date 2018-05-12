@@ -22,12 +22,6 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255)
-     */
-    protected $username;
 
     /**
      * @ORM\OneToMany(targetEntity="Status", mappedBy="user")
