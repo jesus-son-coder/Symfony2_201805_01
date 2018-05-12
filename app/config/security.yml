@@ -19,6 +19,7 @@ security:
             security: false
 
         main:
+            switch_user: { role: ROLE_ADMIN, parameter: impersonate }
             pattern:  ^/
             form_login:
                 provider: fos_userbundle
