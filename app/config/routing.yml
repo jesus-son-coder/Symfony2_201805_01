@@ -9,6 +9,10 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+app_bundle:
+    resource : "@AppBundle/Resources/config/routing.yml"
+    prefix: /article
+
 tech_corp_front_security:
     resource: "@TechCorpFrontBundle/Resources/config/security_routes.yml"
     prefix:  /

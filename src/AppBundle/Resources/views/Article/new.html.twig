@@ -1,0 +1,9 @@
+
+<h1>Création d'un article</h1>
+
+<form action="{{ path('app_article_creating') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <button type="submit">Créer</button>
+</form>
+
+{# {{ path('article_create') }} #}
